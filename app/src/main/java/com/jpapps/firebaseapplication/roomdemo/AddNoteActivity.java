@@ -3,21 +3,17 @@ package com.jpapps.firebaseapplication.roomdemo;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.pavneet_singh.roomdemo.adapter.NotesAdapter;
-import com.example.pavneet_singh.roomdemo.notedb.NoteDatabase;
-import com.example.pavneet_singh.roomdemo.notedb.model.Note;
+import com.jpapps.firebaseapplication.R;
+import com.jpapps.firebaseapplication.roomdemo.notedb.NoteDatabase;
+import com.jpapps.firebaseapplication.roomdemo.notedb.model.Note;
 
 import java.lang.ref.WeakReference;
-import java.util.List;
 
 public class AddNoteActivity extends AppCompatActivity {
 
