@@ -1,72 +1,6 @@
 package com.jpapps.firebaseapplication;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.Spinner;
-import android.widget.Toast;
-
-import com.androidquery.AQuery;
-import com.androidquery.callback.AjaxCallback;
-import com.androidquery.callback.AjaxStatus;
-import com.ceino.utilitylibrary.CustomEditText;
-import com.ceino.utilitylibrary.CustomFontTextView;
-import com.ceino.utilitylibrary.DeviceFitImageView;
-import com.ceino.utilitylibrary.model.pacifyr.LoginModel;
-import com.ceino.utilitylibrary.model.pacifyr.MRoleModel;
-import com.ceino.utilitylibrary.model.pacifyr.MUser;
-import com.ceino.utilitylibrary.model.pacifyr.ModelFacebook;
-import com.ceino.utilitylibrary.model.pacifyr.post.PostRegisterModel;
-import com.ceino.utilitylibrary.utils.PrefManager;
-import com.facebook.AccessTokenTracker;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
-import com.pacifyr.pacifyrapp.adapter.CountrySpinnerAdapter;
-import com.pacifyr.pacifyrapp.base.PacifyerActivity;
-import com.pacifyr.pacifyrapp.home.ConnectToPacifyrActivity;
-import com.pacifyr.pacifyrapp.home.DashboardActivity;
-import com.pacifyr.pacifyrapp.home.PacifyrDashboardActivity;
-import com.pacifyr.pacifyrapp.model.ItemData;
-import com.pacifyr.pacifyrapp.network.GsonUtils;
-import com.pacifyr.pacifyrapp.network.NetworkService;
-import com.quickblox.auth.QBAuth;
-import com.quickblox.auth.session.QBSession;
-import com.quickblox.auth.session.QBSettings;
-import com.quickblox.core.QBEntityCallback;
-import com.quickblox.core.exception.QBResponseException;
-import com.quickblox.users.QBUsers;
-import com.quickblox.users.model.QBUser;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import static com.ceino.utilitylibrary.network.UtilityNetworkService.ACCOUNT_KEY;
-import static com.ceino.utilitylibrary.network.UtilityNetworkService.APP_ID;
-import static com.ceino.utilitylibrary.network.UtilityNetworkService.AUTH_KEY;
-import static com.ceino.utilitylibrary.network.UtilityNetworkService.AUTH_SECRET;
-import static com.ceino.utilitylibrary.network.UtilityNetworkService.GLOBAL_URL;
-import static com.pacifyr.pacifyrapp.network.NetworkService.countryData;
-import static com.pacifyr.pacifyrapp.network.NetworkService.editProfileObject;
-
-public class LoginActivity extends PacifyerActivity {
+public class LoginActivity3 {/*extends PacifyerActivity {
 
     private EditText edt_password,edt_email;
 
@@ -135,9 +69,9 @@ public class LoginActivity extends PacifyerActivity {
             callbackManager = CallbackManager.Factory.create();
             loginButton = (LoginButton) findViewById(R.id.login_button);
 
-           /* enter_phone_ctxv = (CustomFontTextView) findViewById(R.id.enter_phone_ctxv);
+           *//* enter_phone_ctxv = (CustomFontTextView) findViewById(R.id.enter_phone_ctxv);
             Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Raleway-Bold.ttf");
-            enter_phone_ctxv.setTypeface(type);*/
+            enter_phone_ctxv.setTypeface(type);*//*
 
             if (isValid(alreadyRegisteresPhone)) {
                 phoneCedit.setText(alreadyRegisteresPhone.substring(2));
@@ -147,16 +81,16 @@ public class LoginActivity extends PacifyerActivity {
             list.add(new ItemData("+1", "Canada", R.drawable.canada2));
             list.add(new ItemData("+91", "India", R.drawable.india2));
             list.add(new ItemData("+971","UAE", R.drawable.uae2));
-            /*list.add(new ItemData("+971","Kuwait", R.drawable.kuwait2));*/
+            *//*list.add(new ItemData("+971","Kuwait", R.drawable.kuwait2));*//*
 
             CountrySpinnerAdapter adapter = new CountrySpinnerAdapter(this,
                     R.layout.spinner_item, R.id.txt, list);
             spinner.setAdapter(adapter);
 
-            /*loginButton.setReadPermissions("user_friends");
+            *//*loginButton.setReadPermissions("user_friends");
             loginButton.setReadPermissions("public_profile");
             loginButton.setReadPermissions("email");
-            loginButton.setReadPermissions("user_birthday");*/
+            loginButton.setReadPermissions("user_birthday");*//*
 
             loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
 
@@ -300,7 +234,7 @@ public class LoginActivity extends PacifyerActivity {
         finish();
     }
 
-   /* public void loginProcess(View view) {
+   *//* public void loginProcess(View view) {
         try {
             setLoading();
             showProgress();
@@ -327,7 +261,7 @@ public class LoginActivity extends PacifyerActivity {
         }
         catch(Exception ex)
         { hideProgress();ex.printStackTrace();}
-    }*/
+    }*//*
     public void callLogin(int checkVal)
     {
         showProgress();
@@ -352,7 +286,7 @@ public class LoginActivity extends PacifyerActivity {
                                             signInCreatedUser();
                                             //String sts = status.getMessage().toString();
 
-                                            /*userModel = loginModel.getUser();
+                                            *//*userModel = loginModel.getUser();
                                             String jsonStrng = json.toString();
                                             MRoleModel roleModel = userModel.getRoleModel();
                                             label = roleModel.getLabel();
@@ -372,7 +306,7 @@ public class LoginActivity extends PacifyerActivity {
                                                 prefM.savefbName(FName);
                                             }else{
                                                 prefM.savefbName(userModel.getFirstName()+" "+userModel.getLastName());
-                                            }*/
+                                            }*//*
 
                                            //qbNewLogin();
 
@@ -399,7 +333,7 @@ public class LoginActivity extends PacifyerActivity {
                                     public void run() {
                                         hideStatus();
                                         finish();
-                                        /*hideKeyboard();*/
+                                        *//*hideKeyboard();*//*
                                     }
                                 }, 3000);
                             }
@@ -411,7 +345,7 @@ public class LoginActivity extends PacifyerActivity {
                         //Toast.makeText(LoginActivity.this, js, Toast.LENGTH_LONG).show();
                     } catch (Exception e) {
                         hideProgress();
-                        Toast.makeText(LoginActivity.this,/*loginModel.getMessage()+"/n"+*/e.getMessage(), Toast.LENGTH_LONG);
+                        Toast.makeText(LoginActivity.this,*//*loginModel.getMessage()+"/n"+*//*e.getMessage(), Toast.LENGTH_LONG);
                         LoginManager mLoginManager = LoginManager.getInstance();
                         mLoginManager.logOut();
                         main_label="error";
@@ -514,11 +448,11 @@ public class LoginActivity extends PacifyerActivity {
                         Toast.makeText(LoginActivity.this,ex.getMessage(), Toast.LENGTH_LONG);
                     }
 
-                 /* if (deleteCurrentUser) {
+                 *//* if (deleteCurrentUser) {
                     removeAllUserData(result);
                    } else {
                     startOpponentsActivity();
-                   }*/
+                   }*//*
                 }
 
                 @Override
@@ -708,5 +642,5 @@ public class LoginActivity extends PacifyerActivity {
             }
         });
     }
-
+*/
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.jpndev.utilitylibrary.DeviceFitImageView
+        android:id="@+id/qs_dimv"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+android:src="@drawable/placeholder_image"
+app:parameter="aspect_width"
+        app:width_percentage="100"
+        android:background="@color/transparent"
+
+
+
+
+        />
+    <com.kaopiz.kprogresshud.SpinView
+        android:id="@+id/spinview"
+        android:background="@color/grey"
+        android:layout_centerInParent="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+</RelativeLayout>

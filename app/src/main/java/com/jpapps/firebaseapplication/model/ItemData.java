@@ -1,4 +1,4 @@
-package com.pacifyr.pacifyrapp.model;
+package com.jpapps.firebaseapplication.model;
 
 /**
  * Created by ceino on 11/1/18.
@@ -14,7 +14,7 @@ public class ItemData {
         this.imageId=imageId;
     }
 
-    public ItemData(String text,String country, Integer imageId){
+    public ItemData(String text, String country, Integer imageId){
         this.country=country;
         this.code=text;
         this.imageId=imageId;

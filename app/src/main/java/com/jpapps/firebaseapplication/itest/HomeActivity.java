@@ -9,9 +9,9 @@ import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 import com.jpapps.firebaseapplication.R;
 import com.jpapps.firebaseapplication.itest.adapter.AdapterRcvItem;
-import com.jpapps.firebaseapplication.itest.aquery_network.NetworkApi;
+import com.jpapps.firebaseapplication.network.NetworkApi;
 import com.jpapps.firebaseapplication.itest.model.MItem;
-import com.jpapps.firebaseapplication.itest.network.GsonUtils;
+import com.jpapps.firebaseapplication.network.GsonUtils;
 
 import org.json.JSONArray;
 

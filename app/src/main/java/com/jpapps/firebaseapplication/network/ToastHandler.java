@@ -1,14 +1,10 @@
-package com.pacifyr.pacifyrapp.utils;
+package com.jpapps.firebaseapplication.network;
 
-/**
- * Created by ceino on 15/1/15.
- */
 
 import android.content.Context;
 import android.os.Handler;
 import android.widget.Toast;
 
-import com.pacifyr.pacifyrapp.network.NetworkService;
 
 /**
  * A class for showing a <code>Toast</code> from background processes using a
@@ -21,7 +17,7 @@ public class ToastHandler
     // General attributes
     private Context mContext;
     private Handler mHandler;
-    private boolean isProduction= NetworkService.isRelease;
+    private boolean isProduction=true;
     static  ToastHandler toastHandler=null;
     /**
      * Class constructor.

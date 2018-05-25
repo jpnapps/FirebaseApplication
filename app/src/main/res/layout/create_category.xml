@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
 
-</android.support.constraint.ConstraintLayout>
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_parent_rlay"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/category_edt"
+        android:hint="category name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/add_subcategory"
+        android:layout_width="match_parent"
+        android:text="Add subcategory"
+        android:layout_height="wrap_content" />
+
+       <android.support.v7.widget.RecyclerView
+           android:padding="10dp"
+           android:id="@+id/sub_rcv"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+</RelativeLayout>

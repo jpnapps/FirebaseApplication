@@ -5,4 +5,8 @@ package com.jpapps.firebaseapplication.model;
  */
 
 public class MCategory {
+
+    String id="";
+    String name="";
+    MCategory mSubCategory=null;
 }

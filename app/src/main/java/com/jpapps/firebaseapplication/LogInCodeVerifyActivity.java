@@ -1,15 +1,11 @@
-package com.jpapps.firebaseapplication.login;
+package com.jpapps.firebaseapplication;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -28,15 +24,10 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.jpapps.firebaseapplication.Pinview;
-import com.jpapps.firebaseapplication.R;
-import com.jpapps.firebaseapplication.RetailerActivity;
 import com.jpndev.utilitylibrary.CustomFontTextView;
 import com.jpndev.utilitylibrary.DeviceFitImageView;
 import com.jpndev.utilitylibrary.base.BaseAppCompactActivity;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -189,7 +180,7 @@ public class LogInCodeVerifyActivity extends BaseAppCompactActivity {
 
 
 
-                    PackageInfo info;
+                /*    PackageInfo info;
                     try {
 
                         info = getPackageManager().getPackageInfo(
@@ -210,7 +201,7 @@ public class LogInCodeVerifyActivity extends BaseAppCompactActivity {
                         Log.e("no such an algorithm", e3.toString());
                     } catch (Exception e2) {
                         Log.e("exception", e2.toString());
-                    }
+                    }*/
 
                     // This callback is invoked in an invalid request for verification is made,
                     // for instance if the the phone number format is not valid.

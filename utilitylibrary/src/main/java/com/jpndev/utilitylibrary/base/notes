@@ -1,0 +1,6 @@
+
+Singleton vs Statics
+
+Singleton objects are stored in Heap, but static objects are stored in stack.
+
+Singletons can implement interfaces (or derive from useful base classes, although that's less common IME), so you can pass around the singleton as if it were "just another" implementation.

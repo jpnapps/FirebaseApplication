@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/action_bar_top_llay"
+    android:layout_height="match_parent"
+    android:background="@drawable/actionbar_bg_bottom_line"
+    android:orientation="vertical"
+    >
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/bottom_panel"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/left_llay"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content">
+            <com.jpndev.utilitylibrary.DeviceFitImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/back_imv"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                app:width_percentage="9"
+                app:parameter="fixed_ratio"
+                app:height_percentage="6"
+                android:scaleType="fitCenter"
+                android:padding="3dp"
+
+                android:visibility="visible"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentStart="true" />
+
+            <com.jpndev.utilitylibrary.CustomFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/back_imv"
+                android:id="@+id/left_txv"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
+                android:textColor="@color/white_green"
+                android:paddingBottom="2dp"
+                android:textSize="@dimen/sp22"
+                android:visibility="visible"
+                android:text="Job Search "
+                android:layout_gravity="center_vertical"
+                app:fontString="@string/avenir_roman"
+                android:layout_centerVertical="true"
+                />
+        </LinearLayout>
+        <com.jpndev.utilitylibrary.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=" "
+            android:padding="5dp"
+            android:singleLine="true"
+
+            android:maxEms="12"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            app:fontString="@string/avenir_roman"
+            android:gravity="center"
+            android:textSize="@dimen/sp24"
+            android:id="@+id/title_txv"
+            android:textColor="@color/white_green"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/right_llay"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="2dp"
+            android:visibility="visible"
+            android:paddingBottom="2dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content">
+            <com.jpndev.utilitylibrary.DeviceFitImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/attach_imv"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+
+                app:width_percentage="9"
+                app:parameter="fixed_ratio"
+                app:height_percentage="8"
+                android:scaleType="centerInside"
+                android:padding="1dp"
+
+                android:src="@drawable/ic_attach"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/save_dimv"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+  />
+
+
+            <com.jpndev.utilitylibrary.DeviceFitImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/send_imv"
+                android:id="@+id/save_dimv"
+                android:padding="1dp"
+                android:src="@drawable/ic_save"
+                app:width_percentage="10"
+                app:parameter="fixed_ratio"
+                app:height_percentage="8"
+                android:scaleType="centerInside"
+android:layout_gravity="center_vertical"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                />
+            <!--      android:textColor="@drawable/text_enable_color_selector"-->
+            <com.jpndev.utilitylibrary.DeviceFitImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/send_imv"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_send"
+                android:layout_marginRight="4dp"
+                app:width_percentage="9"
+                app:parameter="fixed_ratio"
+                app:height_percentage="7"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentEnd="true" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

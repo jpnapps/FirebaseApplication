@@ -1,4 +1,4 @@
-package com.pacifyr.pacifyrapp.adapter;
+package com.jpapps.firebaseapplication;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,11 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.pacifyr.pacifyrapp.R;
-import com.pacifyr.pacifyrapp.model.ItemData;
+import com.jpapps.firebaseapplication.model.ItemData;
 
 import java.util.ArrayList;
 

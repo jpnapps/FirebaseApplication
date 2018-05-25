@@ -1,0 +1,24 @@
+//distributionUrl=https\://services.gradle.org/distributions/gradle-4.1-all.zip
+
+keytool -exportcert -list -v -alias jpn -keystore O:\ApkFiles\keyfiles\jobsearch.jks
+
+pacifyr : 11:C7:D8:DC:5B:D8:AC:5E:D3:6D:29:04:C6:F8:1F:F0:AB:CF:7C:BD
+
+keytool -exportcert -alias com.pacifyr.pacifyrapp -keystore /home/ceino/ApkFiles/keyfiles/pacifyrkey.jks | openssl sha1 -binary | openssl base64
+keytool -exportcert -alias androidceino -keystore /home/ceino/ApkFiles/keyfiles/leapupkey.jks | openssl sha1 -binary | openssl base64
+
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
+keytool -exportcert -list -v \-alias androiddebugkey -keystore ~/.android/debug.keystore
+keytool -exportcert -list -v \-alias androidceino -keystore /home/ceino/ApkFiles/keyfiles/leapupkey.keystore
+
+keytool -exportcert -alias com.pacifyr.pacifyrapp -keystore /home/ceino/ApkFiles/keyfiles/pacifyrkey.jks
+
+keytool -exportcert -alias com.pacifyr.pacifyrapp -keystore O:/ApkFiles/keyfiles/pacifyrkey.jks
+keytool -exportcert -alias com.pacifyr.pacifyrapp -keystore O:\ApkFiles\keyfiles\pacifyrkey.jks
+
+//11:C7:D8:DC:5B:D8:AC:5E:D3:6D:29:04:C6:F8:1F:F0:AB:CF:7C:BD
+keytool -exportcert -list -v -alias com.pacifyr.pacifyrapp -keystore O:\ApkFiles\keyfiles\pacifyrkey.jks
+3dcdaeb4da436182e68f629ac29ba538b9a7ff1d
+keytool -exportcert -list -v \ -alias "com.pacifyr.pacifyrapp" -keystore %O:/ApkFiles/keyfiles/pacifyrkey.jks
+
+app signing fb keyhash code

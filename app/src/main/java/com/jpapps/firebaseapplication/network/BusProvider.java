@@ -1,4 +1,4 @@
-package com.pacifyr.pacifyrapp.event;
+package com.jpapps.firebaseapplication.network;
 
 
 import com.squareup.otto.Bus;

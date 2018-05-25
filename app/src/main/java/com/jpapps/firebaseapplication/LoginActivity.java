@@ -1,4 +1,4 @@
-package com.jpapps.firebaseapplication.login;
+package com.jpapps.firebaseapplication;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,9 +11,6 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.jpapps.firebaseapplication.CountrySpinnerAdapter;
-import com.jpapps.firebaseapplication.R;
-import com.jpapps.firebaseapplication.RetailerActivity;
 import com.jpapps.firebaseapplication.model.ItemData;
 import com.jpapps.firebaseapplication.network.NetworkService;
 import com.jpapps.firebaseapplication.network.PrefManager;

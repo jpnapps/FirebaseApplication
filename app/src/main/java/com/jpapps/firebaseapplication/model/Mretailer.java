@@ -1,5 +1,7 @@
 package com.jpapps.firebaseapplication.model;
 
+import java.util.ArrayList;
+
 public class Mretailer
 {
     private String to;
@@ -12,8 +14,8 @@ public class Mretailer
 
     private String per_page;
 
-    private Data[] data;
-
+   // private Data[] data;
+    public ArrayList<Data> data;
     private String from;
 
     private String filter;
@@ -71,8 +73,19 @@ public class Mretailer
     {
         this.per_page = per_page;
     }
-
-    public Data[] getData ()
+    public ArrayList<Data> getDatalist ()
+    {
+        return data;
+    }
+    public void addDatalist (ArrayList<Data>data)
+    {
+        this.data.addAll(data);
+    }
+    public void setData (ArrayList<Data>data)
+    {
+        this.data = data;
+    }
+ /*   public Data[] getData ()
     {
         return data;
     }
@@ -80,7 +93,7 @@ public class Mretailer
     public void setData (Data[] data)
     {
         this.data = data;
-    }
+    }*/
 
     public String getFrom ()
     {
@@ -127,5 +140,10 @@ public class Mretailer
     {
         return "";
        // return "ClassPojo [to = "+to+", next_page_url = "+next_page_url+", last_page = "+last_page+", total = "+total+", per_page = "+per_page+", data = "+data+", from = "+from+", filter = "+filter+", prev_page_url = "+prev_page_url+", current_page = "+current_page+"]";
+    }
+
+    public void setvalues(Mretailer values) {
+        this.next_page_url=values.next_page_url;
+        this.prev_page_url=values.prev_page_url;
     }
 }

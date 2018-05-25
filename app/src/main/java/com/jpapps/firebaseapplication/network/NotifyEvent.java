@@ -1,4 +1,5 @@
-package com.pacifyr.pacifyrapp.event;
+package com.jpapps.firebaseapplication.network;
+
 
 import com.androidquery.callback.AjaxStatus;
 
@@ -6,100 +7,74 @@ import com.androidquery.callback.AjaxStatus;
  * Created by ceino on 12/10/15.
  */
 public class NotifyEvent {
-
+    //8d,b8
     public Boolean isSuccess=true;
     public Boolean isPaged=false;
-    public Boolean isUpdate=false;
-    public Boolean isBidhistoryDeleted=false;
     //public Channel.Results channel=null;
     public Exception e=null;
-    public  String priority =null;
-
+    public AjaxStatus status=null;
+    String classname =null;
+    public String priority =null;
+   // public Message message =null;
     public int height, width;
     public  int photolistsize =0;
-    AjaxStatus status=null;
-    String classname =null;
 
 
     //public  Feed.Results[] results=null;
    // public  User[] users=null;
-   /* public NotifyEvent( Channel.Results channel){
+   /* public BaseNotifyEvent( Channel.Results channel){
 
         this.isSuccess=false;
         this.channel=channel;
         this.classname=null;
 
     }*/
-    public NotifyEvent(Boolean isSuccess){
+   /* public BaseNotifyEvent(Boolean isSuccess,Message message){
 
         this.isSuccess=isSuccess;
-
+      //  this.message=message;
         this.status=status;
         this.e=e;
         this.classname=null;
         this.priority=null;
         this.height=-100;
         this.width=-100;
-        this.isUpdate=false;
 
-    }
-    public NotifyEvent(Boolean isSuccess,Exception e){
+    }*/
+    public NotifyEvent(Boolean isSuccess, Exception e){
 
         this.isSuccess=isSuccess;
         this.e=e;
         this.status=status;
         this.classname=null;
         this.priority=null;
+       // this.message=null;
         this.height=-100;
         this.width=-100;
-        this.isUpdate=false;
     }
-    public NotifyEvent(Boolean isSuccess,AjaxStatus status){
+public NotifyEvent(Boolean isSuccess, AjaxStatus status){
 
         this.isSuccess=isSuccess;
         this.status=status;
         this.e=e;
-        this.isUpdate=false;
         this.classname=null;
         this.priority=null;
+       // this.message=null;
         this.height=-100;
         this.width=-100;
     }
-    public NotifyEvent(Boolean isSuccess,Boolean isPaged){
+    public NotifyEvent(Boolean isSuccess, Boolean isPaged){
 
         this.isSuccess=isSuccess;
         this.isPaged=isPaged;
         this.e=e;
-        this.isUpdate=false;
         this.classname=null;
         this.priority=null;
+      //  this.message=null;
         this.height=-100;
         this.width=-100;
     }
-    public NotifyEvent(Boolean isSuccess,Boolean isPaged,Boolean isUpdate){
-
-        this.isSuccess=isSuccess;
-        this.isPaged=isPaged;
-        this.isUpdate=isUpdate;
-        this.e=e;
-        this.classname=null;
-        this.priority=null;
-        this.height=-100;
-        this.width=-100;
-    }
-    public NotifyEvent(Boolean isSuccess,Boolean isPaged,Boolean isUpdate,Boolean isBidhistoryDeleted){
-
-        this.isSuccess=isSuccess;
-        this.isPaged=isPaged;
-        this.isUpdate=isUpdate;
-        this.isBidhistoryDeleted=isBidhistoryDeleted;
-        this.e=e;
-        this.classname=null;
-        this.priority=null;
-        this.height=-100;
-        this.width=-100;
-    }
-   /* public NotifyEvent(Boolean isSuccess,Boolean isPaged,Feed.Results[] results){
+   /* public BaseNotifyEvent(Boolean isSuccess,Boolean isPaged,Feed.Results[] results){
 
         this.isSuccess=isSuccess;
         this.isPaged=isPaged;
@@ -107,7 +82,7 @@ public class NotifyEvent {
         this.results=results;
         this.classname=null;
     }
-    public NotifyEvent(Boolean isSuccess,Boolean isPaged,User[] users){
+    public BaseNotifyEvent(Boolean isSuccess,Boolean isPaged,User[] users){
 
         this.isSuccess=isSuccess;
         this.isPaged=isPaged;
@@ -115,11 +90,22 @@ public class NotifyEvent {
         this.users=users;
         this.classname=classname;
     }*/
+   public NotifyEvent(Boolean isSuccess){
 
+       this.isSuccess=isSuccess;
+       this.status=null;
+       this.e=null;
+       this.classname=null;
+       this.priority=null;
+      // this.message=null;
+       this.height=-100;
+       this.width=-100;
+   }
     public NotifyEvent(){
         this.isSuccess=true;
         this.e=null;
         this.status=null;
+       // this.message=null;
         this.priority=null;
         this.height=-100;
         this.width=-100;
@@ -129,6 +115,7 @@ public class NotifyEvent {
         this.isSuccess=true;
         this.e=null;
         this.status=null;
+      //  this.message=null;
         this.priority=null;
         this.height=height;
         this.width=width;
@@ -138,6 +125,7 @@ public class NotifyEvent {
         this.isSuccess=true;
         this.e=null;
         this.status=null;
+       // this.message=null;
         this.priority=null;
         this.photolistsize=photolistsize;
 
@@ -148,6 +136,7 @@ public class NotifyEvent {
         this.isSuccess=true;
         this.e=null;
         this.status=null;
+      //  this.message=null;
         this.priority=pririty;
         this.height=height;
         this.width=width;

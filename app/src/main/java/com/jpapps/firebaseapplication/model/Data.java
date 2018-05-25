@@ -44,7 +44,13 @@ public class Data
     {
         return share_url;
     }
-
+ /*   public String stripHtml(String html) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            return Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            return Html.fromHtml(html);
+        }
+    }*/
     public void setShare_url (String share_url)
     {
         this.share_url = share_url;

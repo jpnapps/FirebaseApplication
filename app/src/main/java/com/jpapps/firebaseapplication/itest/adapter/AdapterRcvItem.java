@@ -11,9 +11,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.jpapps.firebaseapplication.LogUtils;
 import com.jpapps.firebaseapplication.R;
 import com.jpapps.firebaseapplication.itest.model.MItem;
-import com.jpapps.firebaseapplication.itest.utiliity.LogUtilsutility;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -92,7 +92,7 @@ public class AdapterRcvItem extends  RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
             }
         } catch (Exception e) {
-            LogUtilsutility.LOGD("exception", "AdapterRcvItem onBindViewHolder " + e.getMessage());
+            LogUtils.LOGD("exception", "AdapterRcvItem onBindViewHolder " + e.getMessage());
         }
     }
     private void setViewholder(ViewHolder holder, int position) {
@@ -101,17 +101,18 @@ public class AdapterRcvItem extends  RecyclerView.Adapter<RecyclerView.ViewHolde
             if(isValid(results)) {
 
                  if(isValid(results.getImageUrl())) {
-                     Picasso.get().load(results.getImageUrl())
-                             // .placeholder(R.drawable.)
-                             //.error(R.drawable.user_placeholder_error)
-                             .into(holder.imv);
+                     Picasso.with(context).load(results.getImageUrl()).into(holder.imv);
+//                     Picasso.get().load(results.getImageUrl())
+//                             // .placeholder(R.drawable.)
+//                             //.error(R.drawable.user_placeholder_error)
+//                             .into(holder.imv);
                  }
                  defSetText(holder.txv,results.getTitle());
 
 
             }
             } catch (Exception e) {
-            LogUtilsutility.LOGD("exception", "AdapterRcvItem setViewholder " +position+" e  "+ e.getMessage());
+            LogUtils.LOGD("exception", "AdapterRcvItem setViewholder " +position+" e  "+ e.getMessage());
             }
         }
 

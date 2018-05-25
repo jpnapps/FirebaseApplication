@@ -1,4 +1,4 @@
-package com.jpapps.firebaseapplication.network.service;
+package com.jpapps.firebaseapplication.network;
 
 import android.content.Context;
 

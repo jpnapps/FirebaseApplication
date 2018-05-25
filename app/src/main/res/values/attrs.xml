@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Pinview">
+        <attr name="pinBackground" format="reference"/>
+        <attr name="pinLength" format="integer"/>
+        <attr name="pinWidth" format="dimension"/>
+        <attr name="pinHeight" format="dimension"/>
+        <attr name="splitWidth" format="dimension"/>
+        <attr name="cursorVisible" format="boolean"/>
+        <attr name="password" format="boolean"/>
+        <attr name="forceKeyboard" format ="boolean"/>
+        <attr name="hint" format="string"/>
+        <attr name="inputType"/>
+    </declare-styleable>
+    <attr name="inputType" format="enum">
+        <enum name="text" value="0"/>
+        <enum name="number" value="1"/>
+    </attr>
+
+    <declare-styleable name="CustomFontTextView">
+        <attr name="fontName" format="string" />
+        <attr name="percentage_width" format="integer"/>
+        <attr name="percentage_height" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="DeviceFitImageView">
+        <attr name="width_percentage" format="integer"/>
+        <attr name="tolerance_width" format="integer"/>
+        <attr name="height_percentage" format="integer"/>
+        <attr name="tolerance_height" format="integer"/>
+        <attr name="blur_radius" format="integer"/>
+        <attr name="aspect_ratio" format="float" />
+        <attr name="parameter">
+            <enum name="aspect_width" value="0"/>
+            <enum name="aspect_height" value="1"/>
+            <enum name="fixed_ratio" value="2"/>
+            <enum name="measure_width" value="3"/>
+            <enum name="measure_height" value="4"/>
+        </attr>
+    </declare-styleable>
+</resources>

@@ -45,7 +45,7 @@
 
                 <ImageView
                     android:layout_width="170dp"
-                    android:src="@drawable/logoipad2"
+                    android:src="@drawable/placeholder_image"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/logo_blue"/>
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.ceino.utilitylibrary.CustomFontTextView
+                <com.jpndev.utilitylibrary.CustomFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="17sp"
@@ -95,7 +95,7 @@
                         android:layout_alignLeft="@+id/textView"/>
 
 
-                    <com.ceino.utilitylibrary.CustomEditText
+                    <com.jpndev.utilitylibrary.CustomEditText
                         android:id="@+id/phone_cedit"
                         android:layout_width="match_parent"
                         android:inputType="phone"
@@ -138,7 +138,7 @@
                     android:background="@drawable/blue_border_lightblue"
                     android:padding="10dp">
 
-                    <com.ceino.utilitylibrary.CustomFontTextView
+                    <com.jpndev.utilitylibrary.CustomFontTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/send_confirmcode"
@@ -151,16 +151,8 @@
 
                 </RelativeLayout>
 
-                <com.facebook.login.widget.LoginButton
-                    android:id="@+id/login_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:visibility="gone" />
 
-                <com.ceino.utilitylibrary.CustomFontTextView
+                <com.jpndev.utilitylibrary.CustomFontTextView
 
                     android:layout_marginTop="30dp"
                     android:layout_width="wrap_content"
@@ -168,7 +160,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:text="@string/sms_text_login"
+                    android:text= "@string/sms_text_login"
                     android:layout_margin="5dp"
                     android:textColor="@color/medium_grey_pacifyr"/>
 
@@ -199,7 +191,7 @@
                         android:layout_height="1dp"
                         android:background="@color/signup_view"/>
 
-                    <com.ceino.utilitylibrary.CustomFontTextView
+                    <com.jpndev.utilitylibrary.CustomFontTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="or"
@@ -215,34 +207,7 @@
                 </LinearLayout>
 
 
-                <RelativeLayout
-                    android:layout_gravity="center"
-                    android:id="@+id/facebook_rlay"
-                    android:layout_width="335dp"
-                    android:layout_height="43dp"
-                    android:background="@drawable/fb_signup_btn"
-                    android:padding="10dp">
 
-                    <com.ceino.utilitylibrary.CustomFontTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/login_fb"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true"
-                        android:gravity="center"
-                        android:id="@+id/fb_tcv"
-                        android:textSize="18sp"
-                        android:textColor="@color/white"/>
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="5dp"
-                        android:src="@drawable/facebook"
-                        android:layout_height="30dp"
-                        android:padding="3dp"/>
-
-                </RelativeLayout>
 
             </LinearLayout>
 

@@ -1,23 +1,16 @@
-package com.ceino.utilitylibrary.utils;
+package com.jpapps.firebaseapplication.network;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 
-import com.ceino.utilitylibrary.LogUtilsutility;
-import com.ceino.utilitylibrary.event.BusProvider;
-import com.ceino.utilitylibrary.model.MLoginRoot;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.jpapps.firebaseapplication.model.Mretailer;
 
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class PrefManager {
@@ -50,6 +43,8 @@ public class PrefManager {
     public static final String IS_CHAT_SUBSCRIPTION = "isChatEnable";
     public static final String ACCESSTOKEN = "AccessToken";
     public static final String MLOGINROOT = "MLOGINROOT";
+
+    public static final String MRETAIL= "mretilerroot";
     public static final String JSON_KEY = "JSON_KEY";
     public static final String SESSION_ID = "SESSION_ID";
     public static final String UserFirstName = "UserFirstName";
@@ -174,14 +169,14 @@ public class PrefManager {
 
     }
 
-    public void saveBadgeValue(Integer  badgeValue)
+    public void saveBadgeValue(Integer badgeValue)
     {
         putSharedInteger(BADGE_VALUE,badgeValue);
 
     }
 
 
-    public void saveSessionId(String  id)
+    public void saveSessionId(String id)
     {
         putSharedString(SESSION_ID,id);
 
@@ -191,25 +186,25 @@ public class PrefManager {
     {
         return  getSharedString(PROFILE_IMAGE_URL,null);
     }
-    public void saveUserID(String  classid)
+    public void saveUserID(String classid)
     {
         putSharedString(USERID,classid);
 
     }
 
-    public void savePacifyrID(String  pacifyrId)
+    public void savePacifyrID(String pacifyrId)
     {
         putSharedString(PACIFYR_ID,pacifyrId);
 
     }
 
-    public void saveCompanyID(String  id)
+    public void saveCompanyID(String id)
     {
         putSharedString(COMPANY_ID,id);
 
     }
 
-    public void saveCustomerRole(String  role)
+    public void saveCustomerRole(String role)
     {
         putSharedString(CUSTOMER_ROLE,role);
 
@@ -305,28 +300,28 @@ public class PrefManager {
     {
         putSharedString(IS_CHAT_SUBSCRIPTION,isChat);
     }
-    public void saveLOGINRoot(MLoginRoot root)
+    public void saveMretailer(Mretailer root)
     {
         try {
             Gson gson = new Gson();
             String json = gson.toJson(root);
 
-            putSharedString(MLOGINROOT, json);
+            putSharedString(MRETAIL, json);
         }catch (Exception e)
         {
 
         }
     }
-    public MLoginRoot getLOGINRoot()
+    public Mretailer getMretailer()
     {
-        MLoginRoot loginRoot=null;
+        Mretailer loginRoot=null;
         try {
 
 
-            String jsonString= getSharedString(MLOGINROOT,"");
+            String jsonString= getSharedString(MRETAIL,"");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-            loginRoot = gson.fromJson(jsonString, MLoginRoot.class);
+            loginRoot = gson.fromJson(jsonString, Mretailer.class);
         }catch (Exception e)
         {
 
@@ -466,7 +461,7 @@ public class PrefManager {
         return getSharedString(WEBURL,"");
 
     }
-    public void saveWEBURL(String  classid)
+    public void saveWEBURL(String classid)
     {
         putSharedString(WEBURL,classid);
 
@@ -492,42 +487,6 @@ public class PrefManager {
 
     }
 
-    private String getDayString(String createdAt, SimpleDateFormat sdf) {
-
-        String date="";
-        try{
-            date= sdf.format(sdf.parse(createdAt));
-        }catch (Exception e)
-        {
-            LogUtilsutility.LOGD("exception", "getDayString exception" + e.getMessage());
-        }
-        return date;
-    }
-    private String getDayString(String pass_date) {
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-        String date="";
-        try{
-            date= sdf.format(sdf.parse(pass_date));
-        }catch (Exception e)
-        {
-            LogUtilsutility.LOGD("exception", "getDayString exception" + e.getMessage());
-        }
-        return date;
-    }
-
-    private Date getDate(int i,  Date now_date) {
-        Date newDate =now_date;
-        try{
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(now_date);
-            calendar.add(Calendar.DAY_OF_YEAR, -i);
-            newDate = calendar.getTime();
-        }catch (Exception e)
-        {
-            LogUtilsutility.LOGD("exception", "getDate exception" + e.getMessage());
-        }
-        return newDate;
-    }
 
 
 

@@ -1,12 +1,14 @@
-package com.jpapps.firebaseapplication.itest.network;
+package com.jpapps.firebaseapplication.network;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.jpapps.firebaseapplication.itest.model.MItem;
-import com.jpapps.firebaseapplication.itest.utiliity.LogUtilsutility;
+import com.jpapps.firebaseapplication.LogUtils;
+import com.jpapps.firebaseapplication.model.Mretailer;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -35,27 +37,28 @@ public class GsonUtils<T> {
             // users = gson.fromJson(jsonString, MJobs.class);
 
         } catch (Exception e){
-            LogUtilsutility.LOGD("exception", "NS  JSONArray MItem " + e.getMessage());
+            LogUtils.LOGD("exception", "NS  JSONArray MItem " + e.getMessage());
             //Crashlytics.logException(e);
             e.printStackTrace();
         }
         return posts;
     }
-/*    public MAgencyRoot gsonToMAgencyRoot(JSONObject json) {
+    public Mretailer gsonToMretailer(JSONObject json) {
 
-        MAgencyRoot users = null;
+        Mretailer users = null;
         try {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String jsonString =  json.toString();
-            users = gson.fromJson(jsonString, MAgencyRoot.class);
+            users = gson.fromJson(jsonString, Mretailer.class);
 
         } catch (Exception e){
-            LogUtilsutility.LOGD("exception", "NS JSONObject MAgencyRoot " + e.getMessage());
+            LogUtils.LOGD("exception", "NS JSONObject MAgencyRoot " + e.getMessage());
             //Crashlytics.logException(e);
             e.printStackTrace();
         }
         return users;
     }
+/*
     public MLaunchRoot gsonToMLaunchRoot(JSONObject json) {
 
         MLaunchRoot users = null;
@@ -65,7 +68,7 @@ public class GsonUtils<T> {
             users = gson.fromJson(jsonString, MLaunchRoot.class);
 
         } catch (Exception e){
-            LogUtilsutility.LOGD("exception", "NS JSONObject MLaunchRoot " + e.getMessage());
+            LogUtils.LOGD("exception", "NS JSONObject MLaunchRoot " + e.getMessage());
             //Crashlytics.logException(e);
             e.printStackTrace();
         }
@@ -80,7 +83,7 @@ public class GsonUtils<T> {
             users = gson.fromJson(jsonString, MMissionRoot.class);
 
         } catch (Exception e){
-            LogUtilsutility.LOGD("exception", "NS JSONObject MMissionRoot " + e.getMessage());
+            LogUtils.LOGD("exception", "NS JSONObject MMissionRoot " + e.getMessage());
             //Crashlytics.logException(e);
             e.printStackTrace();
         }
@@ -95,7 +98,7 @@ public class GsonUtils<T> {
             users = gson.fromJson(jsonString, MPadRoot.class);
 
         } catch (Exception e){
-            LogUtilsutility.LOGD("exception", "NS JSONObject MPadRoot " + e.getMessage());
+            LogUtils.LOGD("exception", "NS JSONObject MPadRoot " + e.getMessage());
             //Crashlytics.logException(e);
             e.printStackTrace();
         }
@@ -111,7 +114,7 @@ public class GsonUtils<T> {
             users = gson.fromJson(jsonString, MRocketsRoot.class);
 
         } catch (Exception e){
-            LogUtilsutility.LOGD("exception", "NS JSONObject MRocketsRoot " + e.getMessage());
+            LogUtils.LOGD("exception", "NS JSONObject MRocketsRoot " + e.getMessage());
             //Crashlytics.logException(e);
             e.printStackTrace();
         }
@@ -125,7 +128,7 @@ public class GsonUtils<T> {
             String jsonString =  json.toString();
             users = gson.fromJson(jsonString, MJobs.class);
         } catch (Exception e){
-            LogUtilsutility.LOGD("exception", "NS JSONObject MJobs " + e.getMessage());
+            LogUtils.LOGD("exception", "NS JSONObject MJobs " + e.getMessage());
             //Crashlytics.logException(e);
             e.printStackTrace();
         }

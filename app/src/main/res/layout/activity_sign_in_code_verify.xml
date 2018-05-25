@@ -47,7 +47,7 @@
 
             <ImageView
                 android:layout_width="200dp"
-                android:src="@drawable/logoipad2"
+                android:src="@drawable/placeholder_image"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/logo_blue"/>
@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.ceino.utilitylibrary.CustomFontTextView
+            <com.jpndev.utilitylibrary.CustomFontTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
@@ -77,7 +77,7 @@
                 android:textColor="@color/black_pacifyr"
                 android:text="@string/e_con_code"/>
 
-            <com.ceino.utilitylibrary.CustomFontTextView
+            <com.jpndev.utilitylibrary.CustomFontTextView
 
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content">
 
 
-            <com.ceino.utilitylibrary.CustomEditText
+            <com.jpndev.utilitylibrary.CustomEditText
                 android:layout_width="match_parent"
                 android:textColor="@color/black"
                 android:textSize="@dimen/sp17"
@@ -111,7 +111,7 @@
                 android:id="@+id/otp_edtit_text"
                 android:layout_height="wrap_content" />
 
-            <com.goodiebag.pinview.Pinview
+            <com.jpapps.firebaseapplication.Pinview
                 android:id="@+id/pinview"
                 app:pinBackground="@color/white"
                 android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                 android:background="@drawable/blue_border_lightblue"
                 android:padding="10dp">
 
-                <com.ceino.utilitylibrary.CustomFontTextView
+                <com.jpndev.utilitylibrary.CustomFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sign_in"
@@ -148,7 +148,7 @@
 
             </RelativeLayout>
 
-            <com.ceino.utilitylibrary.CustomFontTextView
+            <com.jpndev.utilitylibrary.CustomFontTextView
                 android:layout_width="wrap_content"
                 android:textSize="@dimen/sp13"
                 android:layout_alignParentBottom="true"
