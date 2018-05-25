@@ -1,11 +1,15 @@
-package com.jpapps.firebaseapplication;
+package com.jpapps.firebaseapplication.login;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -14,9 +18,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.ceino.utilitylibrary.CustomFontTextView;
-import com.ceino.utilitylibrary.DeviceFitImageView;
-import com.goodiebag.pinview.Pinview;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -27,8 +28,15 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.pacifyr.pacifyrapp.base.PacifyerActivity;
+import com.jpapps.firebaseapplication.Pinview;
+import com.jpapps.firebaseapplication.R;
+import com.jpapps.firebaseapplication.RetailerActivity;
+import com.jpndev.utilitylibrary.CustomFontTextView;
+import com.jpndev.utilitylibrary.DeviceFitImageView;
+import com.jpndev.utilitylibrary.base.BaseAppCompactActivity;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -36,9 +44,9 @@ import java.util.concurrent.TimeUnit;
  * Created by ceino on 11/7/17.
  */
 
-public class LogInCodeVerifyActivity extends PacifyerActivity {
+public class LogInCodeVerifyActivity extends BaseAppCompactActivity {
 
-    private ImageView imgBack;
+   // private ImageView imgBack;
     private RelativeLayout logoRlay;
     private ImageView logoBlue;
     private LinearLayout hintLlay;
@@ -66,7 +74,7 @@ public class LogInCodeVerifyActivity extends PacifyerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            fbLogout();
+
             setContentView(R.layout.activity_sign_in_code_verify);
             onSetActionBar();
             mAuth = FirebaseAuth.getInstance();
@@ -75,7 +83,7 @@ public class LogInCodeVerifyActivity extends PacifyerActivity {
             InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
             imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
 
-            imgBack = (ImageView) findViewById(R.id.img_back);
+          //  imgBack = (ImageView) findViewById(R.id.img_back);
             logoRlay = (RelativeLayout) findViewById(R.id.logo_rlay);
             logoBlue = (ImageView) findViewById(R.id.logo_blue);
 
@@ -124,10 +132,10 @@ public class LogInCodeVerifyActivity extends PacifyerActivity {
     }
     
 
-    @Override
+ /*   @Override
     protected View getSnackbarAnchorView() {
         return null;
-    }
+    }*/
 
     private void setClicks() {
         try{
@@ -174,9 +182,36 @@ public class LogInCodeVerifyActivity extends PacifyerActivity {
 
 
                 }
-
+                //com.google.firebase.auth.FirebaseAuthException: This app is not authorized to use Firebase Authentication. Please verifythat the correct package name and SHA-1 are configured in the Firebase Console. [ App validation failed ]
+//com.google.firebase.FirebaseException: An internal error has occurred. [ Access Not Configured. Google Identity Toolkit API has not been used in project 425119376567 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/identitytoolkit.googleapis.com/overview?project=425119376567 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. ]
                 @Override
                 public void onVerificationFailed(FirebaseException e) {
+
+
+
+                    PackageInfo info;
+                    try {
+
+                        info = getPackageManager().getPackageInfo(
+                                "com.example.worldmission", PackageManager.GET_SIGNATURES);
+
+                        for (Signature signature : info.signatures) {
+                            MessageDigest md;
+                            md = MessageDigest.getInstance("SHA");
+                            md.update(signature.toByteArray());
+                            String something = new String(Base64.encode(md.digest(), 0));
+                            Log.e("Hash key", something);
+                            System.out.println("Hash key" + something);
+                        }
+
+                    } catch (PackageManager.NameNotFoundException e1) {
+                        Log.e("name not found", e1.toString());
+                    } catch (NoSuchAlgorithmException e3) {
+                        Log.e("no such an algorithm", e3.toString());
+                    } catch (Exception e2) {
+                        Log.e("exception", e2.toString());
+                    }
+
                     // This callback is invoked in an invalid request for verification is made,
                     // for instance if the the phone number format is not valid.
                     Log.d("jithish", "onVerificationFailed", e);
@@ -312,7 +347,7 @@ public class LogInCodeVerifyActivity extends PacifyerActivity {
                             FirebaseUser user = task.getResult().getUser();
 
                             if(bundle.getString("from").equals("signup")) {
-                                Intent intent = new Intent(LogInCodeVerifyActivity.this, RegisterActivity.class);
+                                Intent intent = new Intent(LogInCodeVerifyActivity.this, RetailerActivity.class);
                                 startActivity(intent);
                                 finish();
                             }
